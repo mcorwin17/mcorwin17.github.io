@@ -1,0 +1,119 @@
+
+/* ---- Base styles ---- */
+:root {
+  --bg: #f8feff;         /* page background */
+  --fg: #0f172a;         /* default text color */
+  --brand: #6f7bfc;      /* headings & accents */
+  --card: #ffffff;       /* card background */
+  --muted: #475569;      /* muted text */
+  --border: #e2e8f0;     /* light borders */
+}
+
+/* Element selectors */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  color: var(--brand);
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 32px auto 16px;
+}
+
+h2 {
+  color: var(--brand);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  margin: 0 0 12px 0;
+}
+
+h3 { margin: 0 0 8px 0; }
+
+p { margin: 0 0 12px 0; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--brand); text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+/* ---- Layout helpers (class selectors) ---- */
+.section {
+  width: min(950px, 92%);
+  margin: 24px auto;   /* centers content and adds vertical spacing */
+}
+
+.about {
+  background: #00b3d108;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.skills ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* Projects grid */
+.projects {
+  display: grid;
+  gap: 16px;
+}
+
+/* Project card styling */
+.project {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.project h3 {
+  color: var(--fg);
+}
+
+.project p { color: var(--muted); }
+
+/* Contact list */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li { margin: 6px 0; }
+
+/* Footer */
+.footer {
+  width: min(950px, 92%);
+  margin: 40px auto 60px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ---- Responsive tweaks ---- */
+@media (min-width: 720px) {
+  .projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
