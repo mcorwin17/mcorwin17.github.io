@@ -66,27 +66,25 @@ a:hover { text-decoration: underline; }
   padding-left: 20px;
 }
 
-/* Projects flex layout  */
+/* Projects flex layout (Required: display: flex; flex-wrap:wrap;) */
 .projects {
-  display: flex; /* Changed from grid to flex */
-  flex-wrap: wrap; /* Allows cards to wrap to a new row */
+  display: flex; 
+  flex-wrap: wrap; 
   gap: 16px;
 }
 
-/* Project card styling */
+/* Project card styling (Required: width: 30%; border-radius: 25%;) */
 .project {
-  /* Use flex-basis for proper wrapping */
-  flex: 0 0 calc(33.333% - 11px); /* 3 cards per row, accounting for gap */
+  /* Using flex-basis for proper wrapping */
+  flex: 0 0 calc(33.333% - 11px); /* About 30% width, accounting for gap */
   max-width: calc(33.333% - 11px);
   
-  /* Required assignment styling [cite: 130, 131, 132, 133, 134, 135] */
-  /* width: 30%; <--- We use flex-basis instead of width for better layout */
-  margin: 0; /* Removed margin here since we use gap on .projects */
-  padding: 20px 10px; /* Adjusted padding from assignment example */
-  background: white; /* pick a color - using white */
-  border-radius: 25px; /* Adjusted from 25% to 25px for better look */
+  /* Applying assignment-required styles */
+  padding: 20px 10px; 
+  background: var(--card); /* white */
+  border-radius: 25px; /* Using 25px for visual appeal, not 25% */
   
-  /* Original styles */
+  /* Base styles */
   border: 1px solid var(--border);
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
@@ -97,15 +95,14 @@ a:hover { text-decoration: underline; }
 
 .project p { color: var(--muted); }
 
-/* Remove old complex project-content layout for the simplified cards */
+/* Simplification: Remove complex inner project-content layout since cards are separate */
 .project-content {
-  display: block; /* No longer need flex for card content */
+  display: block; 
   gap: 0;
   margin-top: 8px;
 }
 
-/* Removed old problem-statement and affinity-diagram classes as the content is now in separate cards.
-   We use a new class for the problem content to keep it styled well within the card. */
+/* Styling for the content within the Problem Statement card */
 .problem-statement-card {
   background: #f8fafc;
   border: 1px solid var(--border);
@@ -151,7 +148,7 @@ a:hover { text-decoration: underline; }
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  margin: 10px 0; /* Add some space around the image */
+  margin: 10px 0; 
 }
 
 
