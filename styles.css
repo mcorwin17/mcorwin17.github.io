@@ -1,4 +1,3 @@
-
 /* ---- Base styles ---- */
 :root {
   --bg: #f8feff;         /* page background */
@@ -67,18 +66,28 @@ a:hover { text-decoration: underline; }
   padding-left: 20px;
 }
 
-/* Projects grid */
+/* Projects flex layout  */
 .projects {
-  display: grid;
+  display: flex; /* Changed from grid to flex */
+  flex-wrap: wrap; /* Allows cards to wrap to a new row */
   gap: 16px;
 }
 
 /* Project card styling */
 .project {
-  background: var(--card);
+  /* Use flex-basis for proper wrapping */
+  flex: 0 0 calc(33.333% - 11px); /* 3 cards per row, accounting for gap */
+  max-width: calc(33.333% - 11px);
+  
+  /* Required assignment styling [cite: 130, 131, 132, 133, 134, 135] */
+  /* width: 30%; <--- We use flex-basis instead of width for better layout */
+  margin: 0; /* Removed margin here since we use gap on .projects */
+  padding: 20px 10px; /* Adjusted padding from assignment example */
+  background: white; /* pick a color - using white */
+  border-radius: 25px; /* Adjusted from 25% to 25px for better look */
+  
+  /* Original styles */
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 14px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
 
@@ -88,89 +97,78 @@ a:hover { text-decoration: underline; }
 
 .project p { color: var(--muted); }
 
-/* Project content layout */
+/* Remove old complex project-content layout for the simplified cards */
 .project-content {
-  display: flex;
-  gap: 16px;
+  display: block; /* No longer need flex for card content */
+  gap: 0;
   margin-top: 8px;
 }
 
-/* Problem statement styling */
-.problem-statement {
+/* Removed old problem-statement and affinity-diagram classes as the content is now in separate cards.
+   We use a new class for the problem content to keep it styled well within the card. */
+.problem-statement-card {
   background: #f8fafc;
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 16px;
-  flex: 0 0 30%; /* Even smaller to give more space to diagram */
+  padding: 12px;
 }
 
-/* Affinity diagram styling */
-.affinity-diagram {
-  background: transparent; /* Remove background */
-  border: none; /* Remove border */
-  border-radius: 0; /* Remove border radius */
-  padding: 0; /* Remove padding */
-  flex: 0 0 65%; /* Even larger than problem statement */
-}
-
-.problem-statement h4 {
+.problem-statement-card h4 {
   color: var(--brand);
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
   font-size: 1.1rem;
 }
 
-.problem-statement p {
+.problem-statement-card p {
   margin: 8px 0;
   line-height: 1.5;
 }
 
-.problem-statement strong {
+.problem-statement-card strong {
   color: var(--fg);
   font-weight: 600;
 }
 
-.problem-statement ul {
+.problem-statement-card ul {
   margin: 8px 0;
   padding-left: 20px;
 }
 
-.problem-statement li {
+.problem-statement-card li {
   margin: 4px 0;
   color: var(--muted);
 }
 
-.problem-statement em {
+.problem-statement-card em {
   color: var(--muted);
   font-size: 0.9rem;
   font-style: italic;
 }
 
-/* Affinity diagram specific styling */
-.affinity-diagram h4 {
-  color: var(--brand);
-  margin: 0 0 12px 0;
-  font-size: 1.1rem;
-}
-
-.affinity-diagram img {
+/* Styling for the diagram image within the new single-section layout */
+.project img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  max-height: none; /* Remove height constraint */
-  min-height: 400px; /* Ensure it's at least this big */
-  object-fit: contain; /* Maintain aspect ratio */
+  margin: 10px 0; /* Add some space around the image */
 }
 
+
 /* Responsive design for project content */
-@media (max-width: 768px) {
-  .project-content {
-    flex-direction: column;
+@media (max-width: 900px) {
+  .project {
+    /* 2 cards per row on smaller screens */
+    flex: 0 0 calc(50% - 8px); 
+    max-width: calc(50% - 8px);
   }
-  
-  .problem-statement,
-  .affinity-diagram {
-    flex: 1 1 100%; /* Full width on mobile */
+}
+
+@media (max-width: 550px) {
+  .project {
+    /* 1 card per row on mobile */
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 
@@ -189,17 +187,4 @@ a:hover { text-decoration: underline; }
   margin: 40px auto 60px;
   color: var(--muted);
   text-align: center;
-}
-
-/* ---- Responsive tweaks ---- */
-@media (min-width: 720px) {
-  .projects {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .projects {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
