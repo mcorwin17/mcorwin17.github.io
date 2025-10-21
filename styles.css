@@ -91,18 +91,19 @@ a:hover { text-decoration: underline; }
   max-width: 100%;
 }
 
-/* Container for the Problem Statement and Affinity Diagram */
+/* Container for the Problem Statement and Spacer */
 .project-content.side-by-side-layout {
   display: flex;
   gap: 16px;
   margin-top: 8px;
+  padding-bottom: 20px; /* Add space before the full-width image */
+  border-bottom: 1px solid var(--border); /* Visual separator */
 }
 
 /* Problem Statement Column (Left, smaller) */
 .problem-statement-column {
   flex: 0 0 35%; /* Takes 35% of the space */
-  padding: 12px;
-  border-right: 1px solid var(--border); /* Visual separator */
+  padding: 12px 12px 0 0; /* Adjusted padding, removing right border */
 }
 
 .problem-statement-column h4 {
@@ -116,70 +117,43 @@ a:hover { text-decoration: underline; }
   font-weight: 600;
 }
 
-/* Affinity Diagram Column (Right, bigger image) */
+/* Affinity Diagram Column (Spacer, Right) */
 .affinity-diagram-column {
   flex: 1 1 65%; /* Takes the remaining 65% of the space */
-  padding: 12px;
+  padding: 12px 0 0 12px;
 }
 
-.affinity-diagram-column h4 {
+/* Make the spacer content less noticeable */
+.spacer-column p {
+    color: transparent; /* Hides the placeholder text */
+    font-size: 0.1px; 
+    line-height: 0.1;
+    margin: 0;
+}
+
+/* New Section for the HUGE Affinity Diagram Image */
+.affinity-image-section {
+    padding: 20px 0 0 0;
+}
+
+.affinity-image-section h4 {
   color: var(--brand);
   margin: 0 0 10px 0;
   font-size: 1.1rem;
+  padding-left: 12px; /* Align with problem statement padding */
 }
 
-.affinity-diagram-column img {
-  width: 100%;
+.affinity-image-section img {
+  width: 100%; /* Image uses full width of the card */
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   margin: 10px 0; 
 }
 
-
-/* Responsive design: Stack columns on smaller screens */
-@media (max-width: 768px) {
-  .project {
-    flex: 1 1 100%; /* All cards go full width on mobile */
-    max-width: 100%;
-  }
-
-  .project-content.side-by-side-layout {
-    flex-direction: column;
-  }
-  
-  .problem-statement-column,
-  .affinity-diagram-column {
-    flex: 1 1 100%; /* Both take full width */
-    padding: 0;
-    border-right: none;
-    border-bottom: 1px solid var(--border); /* Separator on bottom */
-    padding-bottom: 15px;
-  }
+.affinity-image-section p {
+    padding-left: 12px; /* Align with problem statement padding */
 }
 
-/* Make affinity diagram image bigger */
-.affinity-diagram-column img {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
 
-/* Contact list */
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.contact-list li { margin: 6px 0; }
-
-/* Footer */
-.footer {
-  width: min(950px, 92%);
-  margin: 40px auto 60px;
-  color: var(--muted);
-  text-align: center;
-}
+/* Responsive design:
