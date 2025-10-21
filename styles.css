@@ -88,13 +88,29 @@ a:hover { text-decoration: underline; }
 
 .project p { color: var(--muted); }
 
+/* Project content layout */
+.project-content {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
 /* Problem statement styling */
 .problem-statement {
   background: #f8fafc;
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 16px;
-  margin-top: 8px;
+  flex: 1;
+}
+
+/* Affinity diagram styling */
+.affinity-diagram {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  flex: 1;
 }
 
 .problem-statement h4 {
@@ -127,6 +143,27 @@ a:hover { text-decoration: underline; }
   color: var(--muted);
   font-size: 0.9rem;
   font-style: italic;
+}
+
+/* Affinity diagram specific styling */
+.affinity-diagram h4 {
+  color: var(--brand);
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+}
+
+.affinity-diagram img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive design for project content */
+@media (max-width: 768px) {
+  .project-content {
+    flex-direction: column;
+  }
 }
 
 /* Contact list */
