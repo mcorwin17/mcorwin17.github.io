@@ -101,7 +101,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 16px;
-  flex: 1;
+  flex: 0 0 35%; /* Fixed width, smaller than diagram */
 }
 
 /* Affinity diagram styling */
@@ -110,7 +110,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 16px;
-  flex: 1;
+  flex: 0 0 60%; /* Much larger than problem statement */
 }
 
 .problem-statement h4 {
@@ -157,12 +157,19 @@ a:hover { text-decoration: underline; }
   height: auto;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-height: 600px; /* Allow it to be quite large */
+  object-fit: contain; /* Maintain aspect ratio while filling space */
 }
 
 /* Responsive design for project content */
 @media (max-width: 768px) {
   .project-content {
     flex-direction: column;
+  }
+  
+  .problem-statement,
+  .affinity-diagram {
+    flex: 1 1 100%; /* Full width on mobile */
   }
 }
 
