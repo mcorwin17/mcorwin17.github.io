@@ -88,6 +88,47 @@ a:hover { text-decoration: underline; }
 
 .project p { color: var(--muted); }
 
+/* Problem statement styling */
+.problem-statement {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.problem-statement h4 {
+  color: var(--brand);
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+}
+
+.problem-statement p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.problem-statement strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.problem-statement ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.problem-statement li {
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+.problem-statement em {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
 /* Contact list */
 .contact-list {
   list-style: none;
