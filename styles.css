@@ -101,16 +101,16 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 16px;
-  flex: 0 0 35%; /* Fixed width, smaller than diagram */
+  flex: 0 0 30%; /* Even smaller to give more space to diagram */
 }
 
 /* Affinity diagram styling */
 .affinity-diagram {
-  background: #f8fafc;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 16px;
-  flex: 0 0 60%; /* Much larger than problem statement */
+  background: transparent; /* Remove background */
+  border: none; /* Remove border */
+  border-radius: 0; /* Remove border radius */
+  padding: 0; /* Remove padding */
+  flex: 0 0 65%; /* Even larger than problem statement */
 }
 
 .problem-statement h4 {
@@ -155,10 +155,11 @@ a:hover { text-decoration: underline; }
 .affinity-diagram img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  max-height: 600px; /* Allow it to be quite large */
-  object-fit: contain; /* Maintain aspect ratio while filling space */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  max-height: none; /* Remove height constraint */
+  min-height: 400px; /* Ensure it's at least this big */
+  object-fit: contain; /* Maintain aspect ratio */
 }
 
 /* Responsive design for project content */
