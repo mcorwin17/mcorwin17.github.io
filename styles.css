@@ -73,16 +73,16 @@ a:hover { text-decoration: underline; }
   gap: 16px;
 }
 
-/* Project card styling (Required: width: 30%; border-radius: 25%;) */
+/* Project card styling (Adjusted to 2 columns for better image space) */
 .project {
-  /* Using flex-basis for proper wrapping */
-  flex: 0 0 calc(33.333% - 11px); /* About 30% width, accounting for gap */
-  max-width: calc(33.333% - 11px);
+  /* Two cards per row: flex-basis 50% minus half the gap */
+  flex: 0 0 calc(50% - 8px); 
+  max-width: calc(50% - 8px);
   
   /* Applying assignment-required styles */
   padding: 20px 10px; 
   background: var(--card); /* white */
-  border-radius: 25px; /* Using 25px for visual appeal, not 25% */
+  border-radius: 25px; /* Clean look */
   
   /* Base styles */
   border: 1px solid var(--border);
@@ -153,15 +153,7 @@ a:hover { text-decoration: underline; }
 
 
 /* Responsive design for project content */
-@media (max-width: 900px) {
-  .project {
-    /* 2 cards per row on smaller screens */
-    flex: 0 0 calc(50% - 8px); 
-    max-width: calc(50% - 8px);
-  }
-}
-
-@media (max-width: 550px) {
+@media (max-width: 768px) {
   .project {
     /* 1 card per row on mobile */
     flex: 1 1 100%;
@@ -181,7 +173,3 @@ a:hover { text-decoration: underline; }
 /* Footer */
 .footer {
   width: min(950px, 92%);
-  margin: 40px auto 60px;
-  color: var(--muted);
-  text-align: center;
-}
