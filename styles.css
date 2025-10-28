@@ -85,6 +85,25 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
 
+/* Make project card headings match the section headings */
+.project h3 {
+  color: var(--brand);
+  margin: 0 0 12px 0;
+  padding: 0 10px; /* Add a little padding to match card */
+}
+
+/* Style for images inside project cards */
+.project .project-content img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px;
+}
+
+.project .project-content p {
+  padding: 0 10px; /* Add a little padding to match card */
+}
+
+
 /* Force the main project section to take up the full width */
 .full-width-project {
   flex: 1 1 100%;
@@ -144,24 +163,8 @@ a:hover { text-decoration: underline; }
     padding-left: 12px; /* Align with problem statement padding */
 }
 
-/* Two-column layout for side-by-side sections */
-.two-column-layout {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+/* --- Rules for .two-column-layout, .column-left, .column-right removed --- */
 
-.column-left,
-.column-right {
-  flex: 1 1 45%;
-  min-width: 300px;
-}
-
-.column-left h3,
-.column-right h3 {
-  color: var(--brand);
-  margin: 0 0 12px 0;
-}
 
 /* Contact list */
 .contact-list {
