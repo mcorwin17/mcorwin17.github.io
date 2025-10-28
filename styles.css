@@ -91,19 +91,19 @@ a:hover { text-decoration: underline; }
   max-width: 100%;
 }
 
-/* Container for the Problem Statement and Spacer */
+/* Container for the Problem Statement */
 .project-content.side-by-side-layout {
-  display: flex;
-  gap: 16px;
+  /* display: flex;  <-- REMOVED */
+  /* gap: 16px;      <-- REMOVED */
   margin-top: 8px;
   padding-bottom: 20px; /* Add space before the full-width image */
   border-bottom: 1px solid var(--border); /* Visual separator */
 }
 
-/* Problem Statement Column (Left, smaller) */
+/* Problem Statement Column */
 .problem-statement-column {
-  flex: 0 0 35%; /* Takes 35% of the space */
-  padding: 12px 12px 0 0; /* Adjusted padding, removing right border */
+  /* flex: 0 0 35%; <-- REMOVED */
+  padding: 0 0 0 12px; /* Align heading with section below */
 }
 
 .problem-statement-column h4 {
@@ -117,19 +117,8 @@ a:hover { text-decoration: underline; }
   font-weight: 600;
 }
 
-/* Affinity Diagram Column (Spacer, Right) */
-.affinity-diagram-column {
-  flex: 1 1 65%; /* Takes the remaining 65% of the space */
-  padding: 12px 0 0 12px;
-}
+/* Spacer column rules removed */
 
-/* Make the spacer content less noticeable */
-.spacer-column p {
-    color: transparent; /* Hides the placeholder text */
-    font-size: 0.1px; 
-    line-height: 0.1;
-    margin: 0;
-}
 
 /* New Section for the HUGE Affinity Diagram Image */
 .affinity-image-section {
@@ -155,5 +144,38 @@ a:hover { text-decoration: underline; }
     padding-left: 12px; /* Align with problem statement padding */
 }
 
+/* Two-column layout for side-by-side sections */
+.two-column-layout {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-/* Responsive design:
+.column-left,
+.column-right {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.column-left h3,
+.column-right h3 {
+  color: var(--brand);
+  margin: 0 0 12px 0;
+}
+
+/* Contact list */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li { margin: 6px 0; }
+
+/* Footer */
+.footer {
+  width: min(950px, 92%);
+  margin: 40px auto 60px;
+  color: var(--muted);
+  text-align: center;
+}
