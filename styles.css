@@ -182,3 +182,11 @@ a:hover { text-decoration: underline; }
   color: var(--muted);
   text-align: center;
 }
+
+/* Resume section styling */
+.resume {
+  background: #f0fdf4; /* Light green background to distinguish it */
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
