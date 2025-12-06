@@ -4,19 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maxwell Corwin - Resume</title>
+    <title>Maxwell Corwin Resume</title>
     <style>
-        /* Basic styling for cleanliness and readability */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.5;
+            color: #000;
             background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
             margin: 0;
             padding: 20px;
         }
 
-        .container {
+        .resume-container {
             max-width: 800px;
             margin: 0 auto;
             background: #fff;
@@ -24,197 +23,218 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         h1 {
-            margin-bottom: 5px;
-            color: #2c3e50;
-        }
-
-        h2 {
-            border-bottom: 2px solid #2c3e50;
-            color: #2c3e50;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            font-size: 1.2em;
+            margin: 0;
+            font-size: 24pt;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        h3 {
-            margin-bottom: 2px;
-            margin-top: 15px;
-            color: #2980b9;
+        .subtitle {
+            margin: 5px 0;
+            font-size: 11pt;
         }
 
         .contact-info {
-            font-size: 0.9em;
-            margin-bottom: 20px;
-        }
-
-        .contact-info span {
-            margin-right: 15px;
-        }
-
-        .tagline {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .entry {
-            margin-bottom: 15px;
-        }
-
-        .date {
-            float: right;
-            font-weight: bold;
-            color: #7f8c8d;
-        }
-
-        ul {
+            font-size: 10pt;
             margin-top: 5px;
+        }
+
+        /* Sections */
+        h2 {
+            font-size: 12pt;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-bottom: 2px;
+        }
+
+        /* Entries */
+        .entry {
+            margin-bottom: 10px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+
+        .entry-subline {
+            font-style: italic;
+            margin-bottom: 2px;
+        }
+
+        .tech-stack {
+            font-weight: normal;
+            font-style: italic;
+            float: right;
+        }
+
+        /* Lists */
+        ul {
+            margin: 5px 0;
             padding-left: 20px;
+            font-size: 10pt;
         }
 
         li {
+            margin-bottom: 3px;
+        }
+
+        /* Specific content styling */
+        .coursework {
+            font-size: 10pt;
+            margin-top: 5px;
+        }
+
+        .skills-list {
+            font-size: 10pt;
             margin-bottom: 5px;
-        }
-
-        .skills-section p {
-            margin: 5px 0;
-        }
-
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 0.8em;
-            color: #777;
-            border-top: 1px solid #ddd;
-            padding-top: 10px;
-        }
-
-        a {
-            color: #2980b9;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="resume-container">
+
         <header>
             <h1>Maxwell Corwin</h1>
-            <div class="tagline">Completing a BS in Computer Science and Minor in Math</div>
+            <div class="subtitle">Completing a BS in Computer Science and Major in Math</div>
             <div class="contact-info">
-                <span>Phone: (803) 876-0360</span>
-                <span>Email: maxcorwin86@gmail.com</span>
-                <span>Github: mcorwin17</span>
+                Phone: (803) 876-0360 | Email: maxcorwin86@gmail.com | Github: mcorwin17
             </div>
         </header>
 
-        <div class="section">
+        <section>
+            <h2>Education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>University of South Carolina</span>
+                    <span>Expected Graduation Date (2028)</span>
+                </div>
+                <div class="coursework">
+                    <strong>Relevant Coursework:</strong> Data Structures and Algorithms, Database Design, C and
+                    Operating Systems, Intro to AI, Linear Algebra, Ordinary Differential Equations
+                </div>
+            </div>
+        </section>
+
+        <section>
             <h2>Projects</h2>
 
             <div class="entry">
-                <h3>Operating System (MaxOS)</h3>
+                <div class="entry-header">
+                    <span>Operating System (MaxOS)</span>
+                    <span class="tech-stack">C, Assembly</span>
+                </div>
                 <ul>
-                    <li>Developed functional x86 OS with custom bootloader and protected mode switching.</li>
-                    <li>Implemented low-level system programming using assembly, disk I/O, memory management.</li>
-                    <li>Built bootable system with NASM, GCC, QEMU demonstrating computer architecture fundamentals.
-                    </li>
+                    <li>Developed a functional x86 OS from scratch, including a custom bootloader and protected mode
+                        switching</li>
+                    <li>Implemented low-level system functions for disk I/O and memory management using Assembly</li>
+                    <li>Utilized NASM, GCC, and QEMU to build and test the bootable operating system</li>
                 </ul>
             </div>
 
             <div class="entry">
-                <h3>C++ Black Hole Rendering</h3>
+                <div class="entry-header">
+                    <span>C++ Black Hole Rendering</span>
+                    <span class="tech-stack">C++, Physics, Computer Graphics</span>
+                </div>
                 <ul>
-                    <li>Developed physics-based raytracer implementing Schwarzschild metric for gravitational lensing
-                        effects.</li>
-                    <li>Built custom 3D math library with vector operations, camera system, and ray marching algorithms.
-                    </li>
-                    <li>Generated realistic black hole visualizations with accretion disk rendering and
-                        temperature-based coloring.</li>
-                    <li><strong>Technologies:</strong> C++, Physics, Computer Graphics</li>
+                    <li>Engineered a physics-based raytracer to simulate gravitational lensing using the Schwarzschild
+                        metric</li>
+                    <li>Created a custom 3D math library for vector operations, camera controls, and ray marching
+                        algorithms</li>
+                    <li>Rendered scientifically-accurate black hole visualizations with an accretion disk colored by
+                        temperature</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
+        <section>
             <h2>Experience</h2>
 
             <div class="entry">
-                <span class="date">2017-2022</span>
-                <h3>Roblox Game Developer</h3>
+                <div class="entry-header">
+                    <span>Roblox Game Developer</span>
+                    <span>2017-2022</span>
+                </div>
+
+                <div class="entry-subline">Roblox Evolution Soccer</div>
                 <ul>
-                    <li><strong>Roblox Evolution Soccer:</strong> Co-led the development and operations of a soccer
-                        game, driving 12 million+ total visits and maintaining 4,000+ monthly active users.</li>
-                    <li><strong>Old Football Legends:</strong> Co-developed one of the most popular closed community
-                        football games at the time, sustaining a peak of 2,000 concurrent players.</li>
+                    <li>Co-led development and operations for a soccer game, achieving over 12 million lifetime visits
+                    </li>
+                    <li>Managed game updates and community engagement to maintain 4,000+ monthly active users</li>
+                </ul>
+
+                <div class="entry-subline">Old Football Legends</div>
+                <ul>
+                    <li>Contributed to the core development of a popular, closed-community football game</li>
+                    <li>Implemented features that helped sustain a peak of 2,000 concurrent players</li>
                 </ul>
             </div>
 
             <div class="entry">
-                <h3>Web Development (Non-profit)</h3>
+                <div class="entry-header">
+                    <span>Web Development (Non-profit)</span>
+                    <span>2023-2025</span>
+                </div>
+                <div class="entry-subline">Students HelpStudents Tutoring.com</div>
                 <ul>
-                    <li><strong>StudentsHelpStudents Tutoring.com:</strong> Designed, built, and maintained the
-                        non-profit's responsive website using HTML5, CSS3, JavaScript and WordPress gathering over 60
-                        tutees and 15 active tutors.</li>
+                    <li>Designed and developed a responsive website using HTML5, CSS3, and JavaScript on the WordPress
+                        platform</li>
+                    <li>Grew the non-profit's reach by successfully onboarding over 60 tutees and 15 active tutors via
+                        the site</li>
                 </ul>
             </div>
 
             <div class="entry">
-                <h3>Research Intern, University of South Carolina</h3>
+                <div class="entry-header">
+                    <span>Research Intern</span>
+                    <span>2023</span>
+                </div>
+                <div class="entry-subline">University of South Carolina</div>
                 <ul>
-                    <li>Developed embedded firmware using C++ to integrate pH, conductivity, temperature, turbidity and
-                        GPS modules into a UAV-deployable water-quality sensor package.</li>
-                    <li>Iteratively debugged code to resolve sensor leaks and positioning errors.</li>
+                    <li>Built C++ firmware for UAV water sensors integrating pH, conductivity, temperature, turbidity,
+                        and GPS</li>
+                    <li>Improved accuracy by debugging sensor failures, fixing GPS errors, and ensuring consistent data
+                        output</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>Education</h2>
-
-            <div class="entry">
-                <span class="date">2023-2025</span>
-                <h3>Governor's School for Science and Mathematics</h3>
-                <p><strong>GPA:</strong> 5.0 Weighted</p>
-                <p><strong>Relevant Coursework:</strong> Data Structures and Algorithms, Database Designing, C and
-                    Operating Systems, Introduction to AI, Calculus 1, Calculus 2, Linear Algebra, Ordinary Differential
-                    Equations, AP Comp Sci A, AP Comp Sci Principles, Comp Programming 1 & 2.</p>
-            </div>
-
-            <div class="entry">
-                <span class="date">2025-Present</span>
-                <h3>University of South Carolina</h3>
-            </div>
-        </div>
-
-        <div class="section skills-section">
+        <section>
             <h2>Technical Skills</h2>
-            <p><strong>Programming Languages:</strong> Python, Java, Lua, C++, C, JavaScript</p>
-            <p><strong>Development Tools:</strong> Linux, Git, VSCode, Roblox Studio, MySQL, Postman & Selenium</p>
-        </div>
+            <div class="skills-list">
+                <strong>Programming Languages:</strong> Python, Java, Lua, C++, C, JavaScript
+            </div>
+            <div class="skills-list">
+                <strong>Development Tools:</strong> Linux, Git, VSCode, Roblox Studio, MySQL, Postman, Selenium
+            </div>
+        </section>
 
-        <div class="section">
+        <section>
             <h2>Certificates</h2>
-            <ul>
-                <li>CLA: Programming Essentials in C</li>
-                <li>Codeacademy Python Advanced</li>
-                <li>Codeacademy C++ Advanced</li>
-            </ul>
-        </div>
+            <div class="skills-list">
+                CLA: Programming Essentials in C
+            </div>
+            <div class="skills-list">
+                Codeacademy Python Advanced
+            </div>
+            <div class="skills-list">
+                Codeacademy C++ Advanced
+            </div>
+        </section>
 
-        <footer>
-            <span>
-                My resume: <a href="Maxwell_Corwin_Resume.pdf">PDF version</a> | <a href="resume.html">HTML version</a>
-            </span>
-            <br><br>
-            <small>Content created with help from AI (Gemini)</small>
-        </footer>
     </div>
 
 </body>
